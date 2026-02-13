@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aliea 💜</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #6a0dad, #b19cd9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .container {
+        max-width: 600px;
+        padding: 20px;
+        z-index: 2;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .yes-btn {
+        background-color: white;
+        color: #6a0dad;
+    }
+
+    .no-btn {
+        background-color: #4b0082;
+        color: white;
+        position: relative;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .letter {
+        display: none;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    /* Bigger Background Icons */
+    .bg-icon {
+        position: absolute;
+        font-size: 70px;   /* Bigger emojis */
+        opacity: 0.18;
+        animation: pulse 4s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 0.15; }
+        50% { transform: scale(1.2); opacity: 0.3; }
+        100% { transform: scale(1); opacity: 0.15; }
+    }
+</style>
+</head>
+<body>
+
+<!-- More background emojis -->
+<div class="bg-icon" style="top:5%; left:5%;">🐶</div>
+<div class="bg-icon" style="top:10%; right:8%;">🐱</div>
+<div class="bg-icon" style="bottom:5%; left:10%;">🧁</div>
+<div class="bg-icon" style="bottom:15%; right:5%;">🍰</div>
+<div class="bg-icon" style="top:40%; left:2%;">🐾</div>
+<div class="bg-icon" style="top:65%; right:3%;">🐶</div>
+<div class="bg-icon" style="bottom:5%; right:35%;">🐱</div>
+<div class="bg-icon" style="top:25%; left:30%;">🍩</div>
+<div class="bg-icon" style="top:75%; left:25%;">🐾</div>
+<div class="bg-icon" style="bottom:30%; right:25%;">🧁</div>
+<div class="bg-icon" style="top:50%; left:45%;">🐶</div>
+<div class="bg-icon" style="bottom:40%; left:60%;">🐱</div>
+
+<div class="container" id="main">
+    <h1>Aliea 💜<br>Will you be my Valentine Again?</h1>
+
+    <div class="button-group">
+        <button class="yes-btn" onclick="showLetter()">Yes Marlon 💕</button>
+        <button class="no-btn" id="noBtn" onclick="moveButton()">No 💔</button>
+    </div>
+</div>
+
+<div class="container letter" id="letter">
+    <h1>To My Baby 💜</h1>
+    <p>
+        Baby, ever since we got together, you’ve made my life feel different — better.
+        We’re so clingy with each other and I honestly wouldn’t have it any other way.
+        Talking to you, being around you, even the small moments — they mean everything to me.
+    </p>
+    <p>
+        Even though we haven’t really had proper “us time” yet or gone over each other’s houses,
+        I already know those moments are going to be so special when they happen.
+        I can’t wait for the day we finally just get to be together properly.
+    </p>
+    <p>
+        I’m going away tomorrow and I already know I’m going to miss you so much next week.
+        But no matter where I am, you’re stuck in my head and my heart.
+    </p>
+    <p>
+        I see a future with you. I want to grow with you, experience new things together,
+        have our first real dates, our first real alone time, and so many memories after that.
+        You’ve been the best girlfriend to me, and I’m so lucky you’re mine.
+    </p>
+    <p>
+        I love you. Forever yours,<br>
+        Marlon 💜
+    </p>
+</div>
+
+<script>
+let noMessages = [
+    "Are you sure? 🥺",
+    "Really sure Baby? 😭",
+    "But Whyyy Pleaseeee🥹",
+    "I’ll miss you next week 💔",
+    "Don’t do this to me 😔",
+    "Last chanceeee 💜"
+];
+
+let count = 0;
+const noBtn = document.getElementById("noBtn");
+
+function moveButton() {
+    if (count < noMessages.length) {
+        noBtn.innerText = noMessages[count];
+        count++;
+    }
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = Math.random() * (window.innerWidth - 120) + "px";
+    noBtn.style.top = Math.random() * (window.innerHeight - 50) + "px";
+}
+
+function showLetter() {
+    document.getElementById("main").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
